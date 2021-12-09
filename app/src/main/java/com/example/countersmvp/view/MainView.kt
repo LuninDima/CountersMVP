@@ -1,5 +1,7 @@
 package com.example.countersmvp.view
 
+import com.example.countersmvp.model.ButtonUiModel
+
 interface MainView {
-    fun setButtonText(index: Int, text: String)
+    fun setButtonText(model: ButtonUiModel)
 }

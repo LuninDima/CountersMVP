@@ -1,19 +1,19 @@
 package com.example.countersmvp.model
 
-class CountersModel {
+import com.example.countersmvp.presenter.EnumToIndexMapper
+
+class CountersModel(private val mapper: EnumToIndexMapper) {
 
     val counters = mutableListOf(0, 0, 0)
 
-    fun getCurrent(index: Int): Int {
+    fun getCurrent(enum: ButtonTypeEnam): Int {
+        val index = mapper.mapEnumToIndex(enum)
         return counters[index]
     }
 
-    fun next(index: Int): Int {
-        counters[index]++
-        return getCurrent(index)
-    }
-
-    fun set(index: Int, value: Int){
-        counters[index] = value
+    fun next(enum: ButtonTypeEnam): Int {
+        val index = mapper.mapEnumToIndex(enum)
+      counters[index]++
+        return getCurrent(enum)
     }
 }
