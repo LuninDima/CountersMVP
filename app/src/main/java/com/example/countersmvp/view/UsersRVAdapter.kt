@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.countersmvp.databinding.TvItemUserBinding
 import com.example.countersmvp.presenter.IUserListPresenter
-import kotlin.coroutines.coroutineContext
 
 class UsersRVAdapter(val presenter: IUserListPresenter):
     RecyclerView.Adapter<UsersRVAdapter.ViewHolder>(){
